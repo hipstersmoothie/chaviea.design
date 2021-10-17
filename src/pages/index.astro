@@ -5,6 +5,7 @@ import Button from "../components/Button/index.jsx";
 import Nav from "../components/Nav/index.jsx";
 import Footer from "../components/Footer/index.jsx";
 import PortfolioPreview from "../components/PortfolioPreview/index.jsx";
+import { Memoji } from '../components/Memoji.jsx'
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = Astro.fetchContent("./project/**/*.md");
@@ -168,7 +169,7 @@ const featuredProject = projects[0];
         padding: 3rem;
       }
 
-      .memoji img {
+      .memoji :global(img) {
         width: 100%;
         max-width: 150px;
 
@@ -203,7 +204,7 @@ const featuredProject = projects[0];
       <div class="gradient2"></div>
       <div class="overlay">
         <div class="memoji">
-          <img src="/assets/memoji.png" />
+          <Memoji />
         </div>
         <div class="author-details">
           <h1 class="title">
